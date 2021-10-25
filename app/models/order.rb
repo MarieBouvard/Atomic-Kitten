@@ -4,6 +4,7 @@ class Order < ApplicationRecord
 
   belongs_to :user
   has_many :order_items
+  has_many :items, through: :order_items
 
   def subtotal
     order_items.collect{|order_items| order_items.valid ? order_items.unit_price * order_items.quantity : 0}.sum

@@ -5,11 +5,12 @@ class Item < ApplicationRecord
 
   has_one_attached :image_url
   validate :image_url
-  
 
-  has_many :join_table_items_carts, dependent: :nullify
+  has_many :cart_items
+  has_many :cart
   has_many :order_items
-  
+  has_many :order
+
   def join_id(user)
     self.join_cart_items.where(cart: user.cart.id)
   end
