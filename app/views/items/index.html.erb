@@ -1,0 +1,43 @@
+<h1 class="text-center"> Atomic Kitten </h1>
+<hr/>
+<div class="text-center">
+    <p>Venez découvrir notre boutique e-commerce de photos de chatons. </p>
+    <p>Qu'ils soient foufous, sages ou endormis, nous vous proposons une sélection de photos en Full HD et à des tarifs très compétitifs !</p>
+</div>
+<br/>
+<br/>
+    <%= render 'layouts/carrousel' %>
+<br />
+<br />
+<hr/>
+<br />
+                    
+<div class="container">     
+    <div class="row">
+        <% @items.each do |item|%>
+            <div class="col-12 mb-3 mb-lg-3 col-md-6 col-lg-3">
+                <div class="card shadow-lg">
+                    <%= image_tag item.image_url, width: "auto" if item.image_url.attached? %>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= link_to item.name, item_path(item) %></h5>
+                                <div class="text">
+                                    <p><%= item.description %></p>
+                                    <p><i class="fas fa-dollar-sign"></i><%= item.price %> € </p>
+                                    <% if user_signed_in? %>
+                                        <%= form_for @join_table_item_cart do |f| %>
+                                            <%= f.hidden_field :item_id, value: item.id %>
+                                            <%= f.hidden_field :cart_id, value: current_user.cart.id %>
+                                            <button type="submit" class="fas fa-cart-plus btn btn-success" id="but">Ajout panier</button>
+                                        <% end %>
+                                    <% end %>
+                                </div>
+                
+                        </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+<%= render 'layouts/information' %>
+<%= render 'layouts/footer' %>
+        

@@ -1,0 +1,13 @@
+<br/>
+
+        <h1>Editing picture</h1>
+
+        <%= render 'form', item: @item %>
+    <br/>
+
+        <%= link_to 'Show', @item %> |
+        <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Back', items_path %>
+        
+    <br/>
+    <br/>
