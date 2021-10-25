@@ -3,7 +3,23 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.4'
 
-gem 'devise'
+gem 'bootstrap', '~> 5.1.0'
+
+gem 'devise', '~> 4.8'
+
+gem "letter_opener", group: :development
+
+gem 'rubocop-faker'
+
+gem 'stripe', '~> 5.28'
+
+gem 'faker', '~> 2.19'
+
+gem 'aws-sdk-s3', require: false
+
+gem 'dotenv', '~> 2.7', '>= 2.7.6'
+
+gem 'sendgrid', '~> 1.2', '>= 1.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
