@@ -18,6 +18,6 @@ class CartItemsController < ApplicationController
     private
 
     def permit_link_params
-      params.require(:join_table_items_cart).permit(:item_id, :cart_id, :quantity)
+      params.require(:cart_item).permit(:item_id, :cart_id, :quantity)
     end
 end

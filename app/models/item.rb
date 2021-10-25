@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  validate :name
+  validate :title
   validate :description
   validate :price
 

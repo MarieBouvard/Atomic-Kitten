@@ -6,12 +6,12 @@ class ItemsController < ApplicationController
     
     def index
       @items = Item.all
-      @join_table_item_cart = JoinTableItemsCart.new
+      @cart_item = CartItem.new
     end
   
     def show
       @item = Item.find(params[:id])
-      @join_table_item_cart = JoinTableItemsCart.new
+      @cart_item= CartItem.new
     end
   
     def new
@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
     private 
   
     def item_params
-      params.require(:item).permit(:name, :description, :price, :image_url)
+      params.require(:item).permit(:title, :description, :price, :image_url)
     end
   
   end

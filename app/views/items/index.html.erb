@@ -19,7 +19,7 @@
                 <div class="card shadow-lg">
                     <%= image_tag item.image_url, width: "auto" if item.image_url.attached? %>
                         <div class="card-body">
-                            <h5 class="card-title"><%= link_to item.name, item_path(item) %></h5>
+                            <h5 class="card-title"><%= link_to item.title, item_path(item) %></h5>
                                 <div class="text">
                                     <p><%= item.description %></p>
                                     <p><i class="fas fa-dollar-sign"></i><%= item.price %> € </p>

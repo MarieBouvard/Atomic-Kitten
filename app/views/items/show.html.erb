@@ -7,7 +7,7 @@
             <div class="card shadow-lg">
             <%= image_tag @item.image_url, width: "auto" if @item.image_url.attached? %>
                 <div class="card-body">
-                    <h5 class="card-title"><%= @item.name %></h5>
+                    <h5 class="card-title"><%= @item.title %></h5>
                         <div class="text">
                             <p><%= @item.description %></p>
                             <p><i class="fas fa-dollar-sign"></i><%= @item.price %> €</p>

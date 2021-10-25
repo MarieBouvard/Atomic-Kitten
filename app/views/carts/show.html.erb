@@ -21,7 +21,7 @@
                         <%  @items_in_cart.each do |item| %>
                             <tr>
                             <th scope="row"><%= item.quantity %></th>
-                            <td><%= item.item.name %></td>
+                            <td><%= item.item.title %></td>
                             <td><%= item.item.price %>€</td>
                             <td><%= total_item = item.item.price*item.quantity.to_d %>€</td>
                             <% total_price << total_item %>
@@ -43,7 +43,7 @@
                             </tr>
                     </tbody>
                 </table>
-                    <%= button_to "Passer commande", checkout_create_path(total_price), class: "btn btn-primary", remote: true %>
+                    <%= button_to "Passer commande", checkout_create_path, :method => :post, class: "btn btn-primary", remote: true %>
             </div>
         </div>
 </div>

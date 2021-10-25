@@ -30,7 +30,7 @@ class CartsController < ApplicationController
     end
 
     def is_in_cart?(id)
-      self.join_cart_iems.find_by(cart_id: self.id, item_id: id)
+      self.cart_items.find_by(cart_id: self.id, item_id: id)
     end
 
     private
