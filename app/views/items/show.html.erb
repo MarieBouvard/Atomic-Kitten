@@ -13,7 +13,7 @@
                             <p><i class="fas fa-dollar-sign"></i><%= @item.price %> €</p>
                             
                             <% if user_signed_in? %>
-                            <%= form_for @join_table_item_cart do |f| %>
+                            <%= form_for @cart_item do |f| %>
                                 <%= f.hidden_field :item_id, value: @item.id %>
                                 <%= f.hidden_field :cart_id, value: current_user.cart.id %>
                                 <button type="submit" class="fas fa-cart-plus">Ajout panier</button>

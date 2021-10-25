@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :carts
+
   devise_for :users
-  root to: "home#index"
+  resources :items
+  resources :order_items
+  resources :cart_items, only: [:create, :update, :destroy]
+  resources :carts, except: [:index, :new, :edit]
+
+
+
+  root to: 'items#index'
 end

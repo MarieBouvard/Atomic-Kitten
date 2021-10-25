@@ -25,7 +25,7 @@
                             <td><%= item.item.price %>€</td>
                             <td><%= total_item = item.item.price*item.quantity.to_d %>€</td>
                             <% total_price << total_item %>
-                            <td><a href="<%= join_table_items_cart_path(item.id) %>" class="btn btn-danger" data-confirm="Êtes-vous sûr de vouloir supprimer ce-t-s article-s du panier ?" data-method="DELETE">Supprimer l'article</a></td>
+                            <td><a href="<%= cart_item_path(item.id) %>" class="btn btn-danger" data-confirm="Êtes-vous sûr de vouloir supprimer ce-t-s article-s du panier ?" data-method="DELETE">Supprimer l'article</a></td>
                             </tr>
                         <% end %>
                          <tr>
